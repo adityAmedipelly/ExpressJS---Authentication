@@ -6,7 +6,7 @@ const mongoose = require("mongoose")
 const {z} = require("zod")
 const Jwt_SECRET="adi123";
 
-mongoose.connect("mongodb+srv://aditya:5QoZaHnDA3Pv6ltW@cluster0.qqyta.mongodb.net/todo-aditya-2223")
+mongoose.connect("mongodb+URL")
 const app=express();
 
 app.use(express.json());
