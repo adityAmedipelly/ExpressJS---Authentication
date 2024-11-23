@@ -29,11 +29,11 @@ app.post("/signup", async function(req,res){
     }
 
 
-    const username=req.body.username
-    const password=req.body.password
-    const email=req.body.email
+    const username = req.body.username
+    const password = req.body.password
+    const email = req.body.email
   try {
-    const haspaswword= await bcrypt.hash(password,5)
+    const haspaswword = await bcrypt.hash(password,5)
     console.log(haspaswword);
  
      await UserModel.create({
@@ -59,8 +59,8 @@ app.post("/signup", async function(req,res){
 
 
 app.post("/signin", async function(req,res){
-    const email=req.body.email
-    const password=req.body.password
+    const email = req.body.email
+    const password = req.body.password
 
     const response = await UserModel.findOne({
         email:email
@@ -95,9 +95,9 @@ app.post("/signin", async function(req,res){
 })
 
 app.post("/todo",auth,async function(req,res){
-    const userId=req.userId
-    const title=req.body.title
-    const done=req.body.done
+    const userId = req.userId
+    const title = req.body.title
+    const done = req.body.done
 
     await todoModel.create({
         userId,
